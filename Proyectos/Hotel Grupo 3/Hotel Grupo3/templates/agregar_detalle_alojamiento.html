@@ -1,0 +1,29 @@
+{% extends "maestra.html" %}
+{% block titulo %}
+Agregar detalle_alojamiento
+{% endblock %}
+{% block contenido %}
+<section class="section">
+    <div class="columns">
+        <div class="column is-one-third">
+            <h3 class="is-size-3">Agregar detalle_alojamiento</h3>
+            <form action="{{url_for('guardar_detalle_alojamiento')}}" method="post">
+                <label for="transaccion_id">TransaccionId</label>
+                 <select required class="select" name="transaccion_id" id="transaccion_id">
+                    {% for transaccion in transaccion %}
+                            <option value="{{ transaccion[0] }}">{{ transaccion[0] }}</option>
+                    {% endfor %}
+                </select>
+                <label for="persona_id">Dni:</label>
+                <select required class="select" name="persona_id" id="persona_id">
+                    {% for personas in personas %}
+                        <option value="{{ personas[0] }}">{{ personas[1] }}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit" class="button is-success mt-2">Guardar</button>
+                <a href="{{url_for('detalle_alojamiento')}}" class="button is-primary mt-2">Volver</a>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

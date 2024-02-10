@@ -1,0 +1,40 @@
+{% extends "maestra.html" %}
+{% block titulo %}
+Editar detalle_servicios
+{% endblock %}
+{% block contenido %}
+<section class="section">
+    <div class="columns">
+        <div class="column">
+            <h3 class="is-size-3">Editar detalle servicios</h3>
+            <form action="{{url_for('actualizar_detalle_servicios')}}" method="post">
+                {# Enviar el id en un campo oculto #}
+                <input type="hidden" name="id" value="{{detalle_servicios[0]}}">
+                <label for="fecha_solicitud">Fecha:</label>
+                <input value="{{detalle_servicios[1]}}" required type="date" class="input" placeholder="fecha_solicitud" name="fecha_solicitud" id="fecha_solicitud">
+                <label for="hora_solicitud">Hora:</label>
+                <input value="{{detalle_servicios[2]}}" required type="time" class="input" placeholder="hora_solicitud" name="hora_solicitud" id="hora_solicitud">
+                <label for="descripcion_solicitud">Descripción:</label>
+                <input value="{{detalle_servicios[3]}}" required type="text" class="input" placeholder="descripcion_solicitud" name="descripcion_solicitud" id="descripcion_solicitud">
+                <label for="monto_servicio">Monto:</label>
+                <input value="{{detalle_servicios[4]}}" required type="number" class="input" placeholder="monto_servicio" name="monto_servicio" id="monto_servicio">
+                <label for="transaccion_id">Transacciòn:</label>
+                <input value="{{detalle_servicios[5]}}" required type="number" class="input" placeholder="transaccion_id" name="transaccion_id" id="transaccion_id">
+                <label for="servicio_id">Servicio:</label>
+                  <select required class="select" name="servicio_id" id="servicio_id">
+                    {% for servicio in servicios %}
+                        {% if servicio[0] == detalle_servicios[6] %}
+                            <option value="{{ servicio[0] }}" selected>{{ servicio[1] }}</option>
+                        {% else %}
+                            <option value="{{ servicio[0] }}">{{ servicio[1] }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+
+                <button type="submit" class="button is-success mt-2">Guardar</button>
+                <a href="{{url_for('detalle_servicios')}}" class="button is-primary mt-2">Volver</a>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

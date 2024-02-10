@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/static/css/estilo.css">
+    <title>FRANK'O Desarrollador Full Stack</title>
+</head>
+
+<body>
+    <!-- SECCION I N I C I O -->
+    <section id="inicio">
+        <div class="contenido">
+            <header>
+                <div class="contenido-header">
+                    <h1>/FRANK'O/</h1>
+                    <nav id="nav" class="">
+                        <ul id="links">
+                            <li><a href="#inicio" class="seleccionado" onclick="seleccionar(this)">INICIO</a></li>
+                            <li><a href="#sobremi" onclick="seleccionar(this)">SOBRE MI</a></li>
+                            <li><a href="#servicios" onclick="seleccionar(this)">SERVICIOS</a></li>
+                            <li><a href="#portfolio" onclick="seleccionar(this)">PORTFOLIO</a></li>
+                            <li><a href="#contacto" onclick="seleccionar(this)">CONTACTO</a></li>
+                        </ul>
+                    </nav>
+
+                    <!-- Icono del menu responsive -->
+                    <div id="icono-nav" onclick="responsiveMenu()">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+
+
+                    <div class="redes">
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram-square"></i></a>
+                    </div>
+                </div>
+            </header>
+            <div class="presentacion">
+                <p class="bienvenida">Bienvenidos</p>
+                <h2>Soy <span>Frank Ocrospoma</span>, Desarrollador Full Stack</h2>
+                <p class="descripcion">"La mejor manera de predecir el futuro es implementarlo." </p>
+                <a href="#portfolio">Ir a Portafolio</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION S O B R E M I -->
+    <section id="sobremi">
+        <div class="contenedor-foto">
+            <img src="/static/img/foto.jpg" alt="">
+        </div>
+        <div class="sobremi">
+            <p class="titulo-seccion">Sobre Mi</p>
+            <h2>Hola, Soy <span>Frank Ocrospoma Ugaz</span></h2>
+            <h3>Desarrollador Full Stack</h3>
+            <P>Apasionado por crear soluciones tecnológicas innovadoras. Mi experiencia abarca desde el diseño hasta la implementación de aplicaciones web escalables, utilizando tecnologías como HTML, CSS, JavaScript, Python, Django y ReactJS. Soy un comunicador eficaz, solucionador de problemas creativo y estoy comprometido a entregar productos de alta calidad que superen las expectativas de mis clientes.</P>
+            <p>Comprometido a seguir aprendiendo y brindar el mejor servicio.</p>
+            <a href="/Curriculum Frank.pdf" download="Curriculum Frank">Descargar CV</a>
+        </div>
+    </section>
+
+    <!-- SECCION S E R V I C I O S -->
+    <section id="servicios">
+        <h3 class="titulo-seccion">MIS SERVICIOS</h3>
+        <div class="fila">
+            <div class="servicio">
+                <span class="icono"> <i class="fa-solid fa-code"></i></span>
+                <h4>Diseño de Sitios Web</h4>
+                <hr>
+                <ul class="servicios-tag">
+                    <li>Web</li>
+                    <li>Graphic</li>
+                    <li>SEO</li>
+                </ul>
+                <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit voluptatibus rem illum sunt, asperiores!</p> -->
+            </div>
+            <div class="servicio">
+                <span class="icono"><i class="fa-solid fa-file-code"></i></span>
+                <h4>Porgramación Python</h4>
+                <hr>
+                <ul class="servicios-tag">
+                    <li>Web</li>
+                    <li>Graphic</li>
+                    <li>SEO</li>
+                </ul>
+                <!-- <p>I have been providing web design services with great success for 9 years. The client is very happy</p> -->
+            </div>
+            <div class="servicio">
+                <span class="icono"><i class="fa-solid fa-arrow-trend-up"></i></span>
+                <h4>Administracion de Bases de Datos</h4>
+                <hr>
+                <ul class="servicios-tag">
+                    <li>Web</li>
+                    <li>Graphic</li>
+                    <li>SEO</li>
+                </ul>
+                <!-- <p>I have been providing web design services with great success for 9 years. The client is very happy</p> -->
+            </div>
+        </div>
+        <div class="fila">
+            <div class="servicio">
+                <span class="icono"><i class="fa-solid fa-database"></i></span>
+                <h4>Ecommerce</h4>
+                <hr>
+                <ul class="servicios-tag">
+                    <li>Web</li>
+                    <li>Graphic</li>
+                    <li>SEO</li>
+                </ul>
+                <!-- <p>I have been providing web design services with great success for 9 years. The client is very happy</p> -->
+            </div>
+            <div class="servicio">
+                <span class="icono"><i class="fa-solid fa-palette"></i></span>
+                <h4>Diseñador Gráfico</h4>
+                <hr>
+                <ul class="servicios-tag">
+                    <li>Web</li>
+                    <li>Graphic</li>
+                    <li>SEO</li>
+                </ul>
+                <!-- <p>I have been providing web design services with great success for 9 years. The client is very happy</p> -->
+            </div>
+            <div class="servicio">
+                <span class="icono"><i class="fa-solid fa-person-circle-question"></i></span>
+                <h4>Administrador de redes</h4>
+                <hr>
+                <ul class="servicios-tag">
+                    <li>Web</li>
+                    <li>Graphic</li>
+                    <li>SEO</li>
+                </ul>
+                <!-- <p>I have been providing web design services with great success for 9 years. The client is very happy</p> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION H A B I L I D A D E S -->
+    <div class="contenedor-skills" id="skills">
+        <h3>HABILIDADES </h3>
+        <div class="skill">
+            <div class="info">
+                <p> <span class="lista"> </span>Html & Css</p>
+                <span class="porcentaje">95%</span>
+            </div>
+
+            <div class="barra">
+                <div class="" id="html"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="info">
+                <p> <span class="lista"> </span>Javascript</p>
+                <span class="porcentaje">90%</span>
+            </div>
+
+            <div class="barra">
+                <div class="" id="js"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="info">
+                <p> <span class="lista"> </span>Bases de Datos</p>
+                <span class="porcentaje">90%</span>
+            </div>
+
+            <div class="barra">
+                <div class="" id="bd"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="info">
+                <p> <span class="lista"> </span>Photoshop</p>
+                <span class="porcentaje">85%</span>
+            </div>
+
+            <div class="barra">
+                <div class="" id="ps"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCION PORTAFOLIO -->
+    <section id="portfolio">
+        <h3 class="titulo-seccion">Mis Proyectos</h3>
+        <div class="fila">
+            <a href="https://sistemafutbol.up.railway.app" class="proyecto">
+                <div class="overlay"></div>
+                <img src="/static/img/proyecto1.jpg" alt="">
+                <div class="info">
+                    <h4>Gestión de encuentros y Control TV (user: admin, pass: admin123)</h4>
+                    <p>Sistema de Gestión Futbolística</p>
+                </div>
+            </a>
+            
+            <a href="https://rest-camp.up.railway.app" class="proyecto">
+                <div class="overlay"></div>
+                <img src="/static/img/proyecto2.jpg" alt="">
+                <div class="info">
+                    <h4>Ventas de productos</h4>
+                    <p>Pagina Web Restaurante - Ecommerce</p>
+                </div>
+            </a>
+            <a href="https://sistemahotelero-production.up.railway.app" class="proyecto">
+                <div class="overlay"></div>
+                <img src="/static/img/proyecto3.jpg" alt="">
+                <div class="info">
+                    <h4>Gestion de Hotel( user:admin, pass:admin)</h4>
+                    <p>Sistema Hotelero </p>
+                </div>
+            </a>
+        </div>
+        <div class="fila">
+            <a href="/timer-cube" class="proyecto">
+            <div class="overlay"></div>
+                <img src="/static/img/proyecto4.jpg" alt="">
+                <div class="info">
+                    <h4>Generador de Scrambles y estadísticas de solves</h4>
+                    <p>Timer de Speed Cubing</p>
+                </div>
+            </a>
+            <a href="/agua" class="proyecto">
+                <div class="overlay"></div>
+                <img src="/static/img/proyecto5.jpg" alt="">
+                <div class="info">
+                    <h4>Aplicación de algoritmos genéticos</h4>
+                    <p>Sistema de distribución de gaua</p>
+                </div>
+            </a>
+            <a href="/vet" class="proyecto">
+                <div class="overlay"></div>
+                <img src="/static/img/proyecto6.jpg" alt="">
+                <div class="info">
+                    <h4>Demo veterinaria</h4>
+                    <p>Web Veterinaria</p>
+                </div>
+            </a>
+        </div>
+        <div class="fila">
+            <div class="proyecto">
+                <div class="overlay"></div>
+                <img src="/static/img/proyecto7.jpg" alt="">
+                <div class="info">
+                    <h4>Descripcion Proyecto</h4>
+                    <p>Diseño Web</p>
+                </div>
+            </div>
+            <a href="/fantasma" class="proyecto">
+                <div class="overlay"></div>
+                <img src="/static/img/proyecto8.jpg" alt="">
+                <div class="info">
+                    <h4>Descripcion Proyecto</h4>
+                    <p>Diseño Web</p>
+                </div>
+            </a>
+            <div class="proyecto">
+                <div class="overlay"></div>
+                <img src="/static/img/proyecto9.jpg" alt="">
+                <div class="info">
+                    <h4>Descripcion Proyecto</h4>
+                    <p>Diseño Web</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCTION C O N T A C T O -->
+    <section id="contacto">
+        <h3 class="titulo-seccion">Contactanos ahora</h3>
+        <div class="contenedor-form">
+            <form action="">
+                <div class="fila mitad">
+                    <input type="text" placeholder="Nombre Completo *" class="input-mitad">
+                    <input type="email" placeholder="Dirección de Email" class="input-mitad">
+                </div>
+                <div class="fila">
+                    <input type="text" placeholder="Tema..." class="input-full">
+                </div>
+                <div class="fila">
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Tu Mensaje..." class="input-full"></textarea>
+                </div>
+
+                <input type="submit" value="Enviar Mensaje" class="btn-enviar">
+            </form>
+        </div>
+    </section>
+
+    <!-- SECCION FOOTER -->
+    <footer>
+        <p>Todos los derechos reservados - Ocrospoma Ugaz Frank - 2024</p>
+        <div class="redes">
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram-square"></i></a>
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

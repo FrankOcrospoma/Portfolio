@@ -1,0 +1,323 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://rubikscu.be/">
+<link rel="amphtml" href="https://rubikscu.be/app/">
+<meta name="description" content="Play with the Rubik's Cube simulator, calculate the solution with the online solver, learn the easiest solution and measure your times.">
+<meta name="keywords" content="rubiks,cube">
+<meta property="og:title" content="Rubik's Cube - Play, Solve, Learn, Time">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rubikscu.be/">
+<meta property="og:image" content="https://rubikscu.be/img/social.jpg">
+<meta property="og:description" content="Play with the Rubik's Cube simulator, calculate the solution with the online solver, learn the easiest solution and measure your times.">
+<link rel="stylesheet" href="/static/css/style.css">
+<style>
+.face {
+    transition: transform 0.5s ease-in-out; /* Transición suave para la rotación */
+    transform-style: preserve-3d; /* Mantener la transformación 3D */
+}
+
+.cube {
+    perspective: 800px; /* Perspectiva para la transformación 3D */
+    transform-style: preserve-3d; /* Mantener la transformación 3D */
+}
+
+.cube:hover {
+    animation: rotateCube 5s infinite linear; /* Animación de rotación continua al pasar el cursor */
+}
+
+@keyframes rotateCube {
+    from {
+        transform: rotateX(0deg) rotateY(0deg); /* Rotación inicial */
+    }
+    to {
+        transform: rotateX(360deg) rotateY(360deg); /* Rotación completa */
+    }
+}
+
+</style>
+<title>Online Rubik's Cube - Simulator, Solver, Tutorial, Timer</title>
+</head>
+<body class="activeSectiontop">
+<header>
+	<h1>Rubik’s Cube</h1>
+
+</header>
+<div id="rubiksCubeSolver" class="clearfix">
+    <div id="hibaUzenet">
+        <div id="closeHibauzenet" title="Close the box">&times;</div>
+        <span id="hiba">Messages will be shown. For example when a cube is not scrambled properly.</span>
+    </div>
+    <div id="wrapCube" class="threeDView">
+        <div class="face" id="face1">
+            <span class="rotArrow" id="rotUp"></span>
+            <span class="rotArrow" id="rotUpI"></span>
+            <div data-field="1" class="color1" id="sticker1"><div></div></div>
+            <div data-field="2" class="color1" id="sticker2"><div></div></div>	
+            <div data-field="3" class="color1" id="sticker3"><div></div></div>	
+            <div data-field="4" class="color1" id="sticker4"><div></div></div>	
+            <div data-field="5" class="color1" id="sticker5"><div></div></div>	
+            <div data-field="6" class="color1" id="sticker6"><div></div></div>	
+            <div data-field="7" class="color1" id="sticker7"><div></div></div>	
+            <div data-field="8" class="color1" id="sticker8"><div></div></div>	
+            <div data-field="9" class="color1" id="sticker9"><div></div></div>	
+        </div>
+        <div class="face" id="face2">
+            <span class="rotArrow" id="rotLeft"></span>
+            <span class="rotArrow" id="rotLeftI"></span>
+            <div data-field="10" class="color2" id="sticker10"><div></div></div>	
+            <div data-field="11" class="color2" id="sticker11"><div></div></div>	
+            <div data-field="12" class="color2" id="sticker12"><div></div></div>	
+            <div data-field="13" class="color2" id="sticker13"><div></div></div>	
+            <div data-field="14" class="color2" id="sticker14"><div></div></div>	
+            <div data-field="15" class="color2" id="sticker15"><div></div></div>	
+            <div data-field="16" class="color2" id="sticker16"><div></div></div>	
+            <div data-field="17" class="color2" id="sticker17"><div></div></div>	
+            <div data-field="18" class="color2" id="sticker18"><div></div></div>	
+        </div>
+        <div class="face" id="face3">
+            <span class="rotArrow" id="rotFront"></span>
+            <span class="rotArrow" id="rotFrontI"></span>
+            <div data-field="19" class="color3" id="sticker19"><div></div></div>	
+            <div data-field="20" class="color3" id="sticker20"><div></div></div>	
+            <div data-field="21" class="color3" id="sticker21"><div></div></div>	
+            <div data-field="22" class="color3" id="sticker22"><div></div></div>	
+            <div data-field="23" class="color3" id="sticker23"><div></div></div>	
+            <div data-field="24" class="color3" id="sticker24"><div></div></div>	
+            <div data-field="25" class="color3" id="sticker25"><div></div></div>	
+            <div data-field="26" class="color3" id="sticker26"><div></div></div>	
+            <div data-field="27" class="color3" id="sticker27"><div></div></div>	
+        </div>
+        <div class="face" id="face4">
+            <span class="rotArrow" id="rotRight"></span>
+            <span class="rotArrow" id="rotRightI"></span>
+            <div data-field="28" class="color4" id="sticker28"><div></div></div>	
+            <div data-field="29" class="color4" id="sticker29"><div></div></div>	
+            <div data-field="30" class="color4" id="sticker30"><div></div></div>	
+            <div data-field="31" class="color4" id="sticker31"><div></div></div>	
+            <div data-field="32" class="color4" id="sticker32"><div></div></div>	
+            <div data-field="33" class="color4" id="sticker33"><div></div></div>	
+            <div data-field="34" class="color4" id="sticker34"><div></div></div>	
+            <div data-field="35" class="color4" id="sticker35"><div></div></div>	
+            <div data-field="36" class="color4" id="sticker36"><div></div></div>	
+        </div>
+        <div class="face" id="face5">
+            <span class="rotArrow" id="rotBack"></span>
+            <span class="rotArrow" id="rotBackI"></span>
+            <div data-field="37" class="color5" id="sticker37"><div></div></div>
+            <div data-field="38" class="color5" id="sticker38"><div></div></div>	
+            <div data-field="39" class="color5" id="sticker39"><div></div></div>	
+            <div data-field="40" class="color5" id="sticker40"><div></div></div>	
+            <div data-field="41" class="color5" id="sticker41"><div></div></div>	
+            <div data-field="42" class="color5" id="sticker42"><div></div></div>	
+            <div data-field="43" class="color5" id="sticker43"><div></div></div>	
+            <div data-field="44" class="color5" id="sticker44"><div></div></div>	
+            <div data-field="45" class="color5" id="sticker45"><div></div></div>	
+        </div>
+        <div class="face" id="face6">
+            <span class="rotArrow" id="rotDown"></span>
+            <span class="rotArrow" id="rotDownI"></span>
+            <div data-field="46" class="color6" id="sticker46"><div></div></div>
+            <div data-field="47" class="color6" id="sticker47"><div></div></div>	
+            <div data-field="48" class="color6" id="sticker48"><div></div></div>	
+            <div data-field="49" class="color6" id="sticker49"><div></div></div>	
+            <div data-field="50" class="color6" id="sticker50"><div></div></div>	
+            <div data-field="51" class="color6" id="sticker51"><div></div></div>	
+            <div data-field="52" class="color6" id="sticker52"><div></div></div>	
+            <div data-field="53" class="color6" id="sticker53"><div></div></div>	
+            <div data-field="54" class="color6" id="sticker54"><div></div></div>	
+        </div>
+    </div>
+    <!-- Agrega botones para cada movimiento -->
+
+
+</div>
+<!-- Agrega botones para cada movimiento -->
+<button onclick="moveUp()">Move Up</button>
+<button onclick="moveDown()">Move Down</button>
+<button onclick="moveLeft()">Move Left</button>
+<button onclick="moveRight()">Move Right</button>
+<button onclick="moveFront()">Move Front</button>
+<button onclick="moveBack()">Move Back</button>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    // Define los colores de las caras
+    var colors = ['red', 'blue', 'green', 'orange', 'yellow', 'white'];
+    
+    // Inicializa el estado del cubo
+    var cubeState = [
+        [1, 1, 1, 1, 1, 1, 1, 1, 1], // Front
+        [2, 2, 2, 2, 2, 2, 2, 2, 2], // Left
+        [3, 3, 3, 3, 3, 3, 3, 3, 3], // Up
+        [4, 4, 4, 4, 4, 4, 4, 4, 4], // Right
+        [5, 5, 5, 5, 5, 5, 5, 5, 5], // Down
+        [6, 6, 6, 6, 6, 6, 6, 6, 6]  // Back
+    ];
+    
+    // Función para mezclar el cubo
+    function mixCube() {
+        for (var i = 0; i < 20; i++) {
+            var rand = Math.floor(Math.random() * 6); // Elije una cara al azar
+            rotateFace(rand);
+        }
+    }
+    
+    // Función para rotar una cara del cubo
+    function rotateFace(face) {
+        var temp = [...cubeState[face]];
+        cubeState[face][0] = temp[6];
+        cubeState[face][1] = temp[3];
+        cubeState[face][2] = temp[0];
+        cubeState[face][3] = temp[7];
+        cubeState[face][4] = temp[4];
+        cubeState[face][5] = temp[1];
+        cubeState[face][6] = temp[8];
+        cubeState[face][7] = temp[5];
+        cubeState[face][8] = temp[2];
+        // Actualiza la representación visual del cubo aquí
+    }
+ // Función para rotar una fila o columna en sentido horario
+function rotateClockwise(array) {
+    return [array[6], array[3], array[0], array[7], array[4], array[1], array[8], array[5], array[2]];
+}
+   
+// Función para actualizar la representación visual del cubo
+// Función para actualizar la representación visual del cubo
+function updateCubeVisual() {
+    for (var face = 0; face < 6; face++) {
+        for (var i = 0; i < 9; i++) {
+            var sticker = document.getElementById('sticker' + (face * 9 + i + 1));
+            sticker.className = 'color' + cubeState[face][i];
+        }
+    }
+}
+
+// Luego, en cada función de movimiento, después de realizar los cambios en cubeState, llama a la función updateCubeVisual():
+function moveUp() {
+    // Rotar la fila superior de la cara frontal en sentido horario
+    cubeState[0] = rotateClockwise(cubeState[0]);
+    // Actualizar las caras adyacentes según la rotación de la cara frontal
+    var temp = cubeState[1][0];
+    cubeState[1][0] = cubeState[4][0];
+    cubeState[4][0] = cubeState[3][0];
+    cubeState[3][0] = cubeState[5][0];
+    cubeState[5][0] = temp;
+
+    // Llamar a la función para actualizar la representación visual del cubo
+    updateCubeVisual();
+}
+
+
+function moveDown() {
+    // Rotar la fila inferior de la cara frontal en sentido horario
+    cubeState[0] = rotateClockwise(cubeState[0]);
+    cubeState[0] = rotateClockwise(cubeState[0]);
+    cubeState[0] = rotateClockwise(cubeState[0]);
+    // Actualizar las caras adyacentes según la rotación de la cara frontal
+    var temp = cubeState[1][6];
+    cubeState[1][6] = cubeState[5][6];
+    cubeState[5][6] = cubeState[3][6];
+    cubeState[3][6] = cubeState[4][6];
+    cubeState[4][6] = temp;
+        // Llamar a la función para actualizar la representación visual del cubo
+        updateCubeVisual();
+}
+
+
+// Función para mover la cara hacia la izquierda
+function moveLeft() {
+    // Rotar la columna izquierda de la cara frontal en sentido horario
+    var temp = cubeState[0][0];
+    cubeState[0][0] = cubeState[2][0];
+    cubeState[2][0] = cubeState[5][8];
+    cubeState[5][8] = cubeState[4][8];
+    cubeState[4][8] = temp;
+    // Actualizar las caras adyacentes según la rotación de la cara frontal
+    var temp2 = cubeState[1][2];
+    cubeState[1][2] = cubeState[1][0];
+    cubeState[1][0] = cubeState[1][6];
+    cubeState[1][6] = cubeState[1][8];
+    cubeState[1][8] = temp2;
+        // Llamar a la función para actualizar la representación visual del cubo
+        updateCubeVisual();
+}
+
+// Función para mover la cara hacia la derecha
+function moveRight() {
+    // Rotar la columna derecha de la cara frontal en sentido horario
+    var temp = cubeState[0][2];
+    cubeState[0][2] = cubeState[4][2];
+    cubeState[4][2] = cubeState[5][6];
+    cubeState[5][6] = cubeState[2][6];
+    cubeState[2][6] = temp;
+    // Actualizar las caras adyacentes según la rotación de la cara frontal
+    var temp2 = cubeState[3][2];
+    cubeState[3][2] = cubeState[3][0];
+    cubeState[3][0] = cubeState[3][6];
+    cubeState[3][6] = cubeState[3][8];
+    cubeState[3][8] = temp2;
+        // Llamar a la función para actualizar la representación visual del cubo
+        updateCubeVisual();
+}
+
+// Función para mover la cara hacia adelante
+function moveFront() {
+    // Rotar la fila inferior de la cara superior en sentido horario
+    cubeState[2] = rotateClockwise(cubeState[2]);
+    // Actualizar las caras adyacentes según la rotación de la cara superior
+    var temp = cubeState[0][6];
+    cubeState[0][6] = cubeState[1][8];
+    cubeState[1][8] = cubeState[4][2];
+    cubeState[4][2] = cubeState[3][0];
+    cubeState[3][0] = temp;
+        // Llamar a la función para actualizar la representación visual del cubo
+        updateCubeVisual();
+}
+
+// Función para mover la cara hacia atrás
+function moveBack() {
+    // Rotar la fila superior de la cara inferior en sentido horario
+    cubeState[5] = rotateClockwise(cubeState[5]);
+    // Actualizar las caras adyacentes según la rotación de la cara inferior
+    var temp = cubeState[0][8];
+    cubeState[0][8] = cubeState[3][8];
+    cubeState[3][8] = cubeState[4][0];
+    cubeState[4][0] = cubeState[1][6];
+    cubeState[1][6] = temp;
+        // Llamar a la función para actualizar la representación visual del cubo
+        updateCubeVisual();
+}
+var isMouseDown = false;
+var startX, startY;
+
+document.addEventListener('mousedown', function(event) {
+    isMouseDown = true;
+    startX = event.clientX;
+    startY = event.clientY;
+});
+
+document.addEventListener('mouseup', function() {
+    isMouseDown = false;
+});
+
+document.addEventListener('mousemove', function(event) {
+    if (isMouseDown) {
+        var deltaX = event.clientX - startX;
+        var deltaY = event.clientY - startY;
+
+        var cube = document.getElementById('rubiksCubeSolver');
+        cube.style.transform = 'rotateX(' + deltaY + 'deg) rotateY(' + deltaX + 'deg)';
+    }
+});
+
+    
+    // Llama a la función para mezclar el cubo al cargar la página
+    mixCube();
+    </script>
+
+</body>
+</html>
