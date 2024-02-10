@@ -1,0 +1,33 @@
+{% extends "maestra.html" %}
+{% block titulo %}
+Editar persona
+{% endblock %}
+{% block contenido %}
+<section class="section">
+    <div class="columns">
+        <div class="column">
+            <h3 class="is-size-3">Editar persona</h3>
+            <form action="{{url_for('actualizar_persona')}}" method="post">
+                {# Enviar el id en un campo oculto #}
+                <input type="hidden" name="persona_id" value="{{persona[0]}}">
+                <label for="dni">DNI:</label>
+                <input value="{{persona[1]}}" required type="text" class="input" placeholder="Dni" name="dni" id="dni">
+                <label for="numero_telefono">Numero_telefono:</label>
+                <input value="{{persona[2]}}" required type="text" class="input" placeholder="Numero_telefono" name="numero_telefono" id="numero_telefono">
+                <label for="nombres">Nombres:</label>
+                <input value="{{persona[3]}}" required type="text" class="input" placeholder="Nombres" name="nombres" id="nombres">
+                <label for="apellidos">Apellidos:</label>
+                <input value="{{persona[4]}}" required type="text" class="input" placeholder="Apellidos" name="apellidos" id="apellidos">
+                <label for="sexo">Sexo:</label>
+                <input value="{{persona[5]}}" required type="text" class="input" placeholder="Sexo" name="sexo" id="sexo">
+                <label for="fecha_ingreso">Fecha_ingreso:</label>
+                <input value="{{persona[6]}}" required type="date" class="input" placeholder="Fecha_ingreso" name="fecha_ingreso" id="fecha_ingreso">
+                <label for="fecha_salida">Fecha_salida:</label>
+                <input value="{{persona[7]}}" required type="date" class="input" placeholder="Fecha_salida" name="fecha_salida" id="fecha_salida">
+                <button type="submit" class="button is-success mt-2">Guardar</button>
+                <a href="{{url_for('personas')}}" class="button is-primary mt-2">Volver</a>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

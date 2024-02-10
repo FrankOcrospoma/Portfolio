@@ -1,0 +1,233 @@
+{% extends "maestra.html" %}
+{% block titulo %} Agregar Detalle Alojamiento {% endblock %}
+{% block contenido %}
+
+<section class="section_docu">
+<body class="docu">
+    <div class="navbar2 is-warning" >
+        <div class="navbar2-menu">
+            <div class="navbar2-start">
+                <a class="navbar2-item"  href="{{url_for('documentacion_habitacion')}}">Habitación</a>
+                <a class="navbar2-item"  href="{{url_for('documentacion_personas')}}">Persona</a>
+                <a class="navbar2-item"  href="{{url_for('documentacion_categoria_habitacion')}}">Categoria Habitacion</a>
+                <a class="navbar2-item"  href="{{url_for('documentacion_transaccion')}}">Transacción</a>
+                <a class="navbar2-item"  href="{{url_for('documentacion_servicio')}}">Servicio</a>
+                <a class="navbar2-item"  href="{{url_for('docu_detalle_servicios')}}">D. Servicio</a>
+                <a class="navbar2-item"  href="{{url_for('documentacion_detalle_alojamiento')}}">D. Alojamiento</a>
+                <a class="navbar2-item"  href="{{url_for('documentacion_comprobante')}}">Comprobante</a>
+                <a class="navbar2-item"  href="{{url_for('documentacion_detalle')}}">D. Comprobante</a>
+            </div>
+
+        </div>
+    </div>
+  <h1>Detalle Alojamiento</h1>
+  <p>Métodos para registrar los detalles de alojamiento que tiene el hotel para el huesped.</p>
+  <h2>Obtener todos los detalles de alojamiento</h2>
+  <p>Este método te permite obtener todos los detalles de alojamiento registrados por el hotel.</p>
+  <table class="custom-table">
+    <tr>
+      <td colspan="2"> <b>HTTP Request (GET)</b></td>
+      <td colspan="2">https://grupo3.pythonanywhere.com/api_obtenerdetalle_alojamientos</td>
+    </tr>
+    <tr>
+      <td colspan="4">No es necesario preparar un cuerpo en la solicitud</td>
+    </tr>
+    <tr>
+      <td colspan="4"> <b>RESPONSE</b></td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        [ <br>
+        { <br>
+
+            "id": 2, <br>
+            "persona_id": 8,<br>
+            "transaccion_id": 3<br>
+
+    }, <br>
+    { <br>
+            "id": 3, <br>
+            "persona_id": 8,<br>
+            "transaccion_id": 1<br>
+    } <br>
+]</td>
+      <td colspan="2">El cuerpo de respuesta,
+        manifiesta todos los elementos
+        pedidos con tres campos, a través
+        de un JSON array. <br>
+        Donde <br>
+        id: Es la identificación del detalle de alojamiento.<br>
+        persona_id: Es la identificación de la persona. <br>
+        transaccion_id: Es la identificación de la transaccion. <br>
+      </td>
+    </tr>
+  </table>
+      <h2>Obtener detalle alojamiento por id</h2>
+      <p>Este método te permite obtener un detalle de alojamiento registrado en el hotel.</p>
+      <table class="custom-table">
+        <tr>
+          <td colspan="2"> <b>HTTP Request (GET)</b></td>
+          <td colspan="2">https://grupo3.pythonanywhere.com/api_obtenerdetalle_alojamiento/3</td>
+        </tr>
+        <tr>
+          <td colspan="4">No es necesario preparar un cuerpo en la solicitud</td>
+        </tr>
+        <tr>
+          <td colspan="4"> <b>RESPONSE</b></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            [ <br>
+            { <br>
+            "id": 3, <br>
+            "persona_id": 10,<br>
+            "transaccion_id": 1<br>
+        }
+    ] </td>
+          <td colspan="2">El cuerpo de respuesta,
+            manifiesta todos los elementos
+            pedidos con tres campos, a través
+            de un JSON array. <br>
+            Donde <br>
+            id: Es la identificación del detalle de alojamiento.<br>
+            persona_id: Es la identificación de la persona. <br>
+            transaccion_id: Es la identificación de la transaccion. <br>
+          </td>
+        </tr>
+      </table>
+      <h2>Guardar detalle alojamiento</h2>
+      <p>Este método te permite crear un detalle de alojamiento nuevo.</p>
+      <table class="custom-table">
+        <tr>
+          <td colspan="2"> <b>HTTP Request (POST)</b></td>
+          <td colspan="2">https://grupo3.pythonanywhere.com/api_guardardetalle_alojamiento</td>
+        </tr>
+        <tr>
+          <td colspan="2">{
+            "persona_id": 4, <br>
+            "transaccion_id": 3 <br>
+            }</td>
+            <td colspan="2">El cuerpo de solicitud,
+                manifiesta todos los elementos
+                a pedir con dos campos, a través
+                de un JSON array. Aqui no se coloca el campo id, el sistema se encargará de asignarle el id correspondiente.<br>
+                Donde <br>
+                persona_id: Es la identificación de la persona. <br>
+                transaccion_id: Es la identificación de la transaccion.<br>
+
+        </td>
+        </tr>
+        <tr>
+          <td colspan="4"> <b>RESPONSE</b></td>
+        </tr>
+        <tr>
+          <td colspan="2">{
+            "Mensaje": "Detalle alojamiento guardada correctamente"
+        }</td>
+          <td colspan="2">El cuerpo de respuesta,
+            manifiesta que el detalle alojamiento ha sido
+            guardada correctamente.
+            Donde
+            Mensaje: Es la respuesta de la
+            lógica de negocio de detalle alojamiento.</td>
+        </tr>
+      </table>
+          <h2>Actualizar detalle alojamiento</h2>
+          <p>Este método te permite actualizar un detalle alojamiento nuevo.</p>
+          <table class="custom-table">
+            <tr>
+              <td colspan="2"> <b>HTTP Request (POST)</b></td>
+              <td colspan="2">https://grupo3.pythonanywhere.com/api_actualizardetalle_alojamiento</td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                {
+                "id": 4, <br>
+                "persona_id": 11, <br>
+                "transaccion_id": 3 <br>
+                }</td>
+                <td colspan="2">El cuerpo de solicitud,
+                    manifiesta todos los elementos
+                    a pedir con tres campos, a través
+                    de un JSON array. Aqui se coloca id del detalle de alojamiento a actualizar.<br>
+                    Donde <br>
+                    id: Es la identificación del detalle de alojamiento. <br>
+                    persona_id: Es la identificación de la persona. <br>
+                    transaccion_id: Es la identificación de la transaccion.<br>
+                </td>
+            </tr>
+            <tr>
+              <td colspan="4"> <b>RESPONSE</b></td>
+            </tr>
+            <tr>
+              <td colspan="2">{
+                "Mensaje": "Detalle alojamiento actualizada"
+            }</td>
+              <td colspan="2">El cuerpo de respuesta,
+                manifiesta que el detalle de alojamiento ha sido
+                actualizado correctamente.
+                Donde
+                Mensaje: Es la respuesta de la
+                lógica de negocio de detalle alojamiento.</td>
+            </tr>
+          </table>
+              <h2>Eliminar detalle alojamiento</h2>
+              <p>Este método te permite eliminar un detalle alojamiento.</p>
+              <table class="custom-table">
+                <tr>
+                  <td colspan="2"> <b>HTTP Request (POST)</b></td>
+                  <td colspan="2">https://grupo3.pythonanywhere.com/api_eliminardetalle_alojamiento</td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    {
+                    "id":4 <br>
+                    }</td>
+                    <td colspan="2">El cuerpo de solicitud,
+                        manifiesta todos los elementos
+                        a pedir con un campo. Aqui se coloca id del detalle de alojamiento a eliminar.<br>
+                        Donde <br>
+                        id: Es la identificación del detalle de alojamiento. <br>
+                </tr>
+                <tr>
+                  <td colspan="4"> <b>RESPONSE</b></td>
+                </tr>
+                <tr>
+                  <td colspan="2">{
+                    "Mensaje": "Detalle alojamiento eliminada correctamente"
+                }</td>
+                  <td colspan="2">El cuerpo de respuesta,
+                    manifiesta que el detalle de alojamiento ha sido
+                    eliminada correctamente.
+                    Donde
+                    Mensaje: Es la respuesta de la
+                    lógica de negocio de detalle de alojamiento.</td>
+                </tr>
+        </table>
+
+         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var currentURL = window.location.href;
+            $('.navbar2-item').each(function() {
+                if (currentURL.indexOf($(this).attr('href')) > -1) {
+                    $(this).addClass('active');
+                }
+
+            });
+
+
+
+
+/*function adjustBoardSize() {
+    var boardSize = Math.min($(window).width(), $(window).height()) * 0.5;
+    $("table").css("width", boardSize);
+    $("table").css("height", boardSize);
+  }
+
+  adjustBoardSize();*/
+        });
+    </script>
+</body>
+</section>
+{% endblock %}

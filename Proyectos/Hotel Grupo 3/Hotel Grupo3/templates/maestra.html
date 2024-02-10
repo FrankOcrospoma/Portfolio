@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Poner un block para que luego pueda ser remplazado en las siguientes plantillas; lo mismo con el  block contenido-->
+    <title>CRUD SISTEMA HOTELERO - {% block titulo %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .carrosel {
+            width: 80%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar is-warning" role="navigation" aria-label="main navigation">
+        <div class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="{{url_for('habitacion')}}">Habitación</a>
+                <a class="navbar-item" href="{{url_for('personas')}}">Persona</a>
+                <a class="navbar-item" href="{{url_for('categoria_habitacion')}}">Categoria Habitacion</a>
+                <a class="navbar-item" href="{{url_for('transaccion')}}">Transacción</a>
+                <a class="navbar-item" href="{{url_for('servicios')}}">Servicio</a>
+                <a class="navbar-item" href="{{url_for('detalle_servicios')}}">Detalle Servicio</a>
+                <a class="navbar-item" href="{{url_for('detalle_alojamiento')}}">Detalle Alojamiento</a>
+                <a class="navbar-item" href="{{url_for('comprobante')}}">Comprobante</a>
+                <a class="navbar-item" href="{{url_for('detalle')}}">Detalle Comprobante</a>
+                <a class="navbar-item" href="{{url_for('documentacion_habitacion')}}">Documentación APIS</a>
+            </div>
+        </div>
+    </nav>
+
+        <div class="table-content">
+            {% block contenido %} {% endblock %}
+        </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+        var currentURL = window.location.href;
+        var $navbarItems = $('.navbar-item');
+        var $navbar2Items = $('.navbar2-item');
+
+        $navbarItems.each(function() {
+            if (currentURL.indexOf($(this).attr('href')) > -1) {
+                $(this).addClass('active');
+            }
+        });
+
+        $navbar2Items.click(function() {
+            $navbarItems.removeClass('active');
+            $navbarItems.last().addClass('active');
+            $(this).addClass('active');
+        });
+
+        $navbar2Items.each(function() {
+            if (currentURL.indexOf($(this).attr('href')) > -1) {
+                $navbarItems.removeClass('active');
+                $navbarItems.last().addClass('active');
+                $(this).addClass('active');
+            }
+        });
+
+});
+
+</script>
+
+
+</body>
+
+</html>

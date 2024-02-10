@@ -1,0 +1,41 @@
+{% extends "maestra.html" %}
+{% block titulo %} Detalle_alojamiento {% endblock %}
+{% block contenido %}
+
+<section class="section">
+    <div class="columns">
+        <div class="column">
+            <h3 class="is-size-3">Detalle alojamiento</h3>
+            <a href="{{url_for('formulario_agregar_detalle_alojamiento')}}" class="button is-success">Agregar</a>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Transaccion id</th>
+                        <th>Dni</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for detalle_alojamiento in detalle_alojamiento %}
+                    <tr>
+                        <td>{{detalle_alojamiento[1]}}</td>
+                        <td>{{detalle_alojamiento[2]}}</td>
+                        <td>
+                            {# Pasar el id (lo que hay en detalle_alojamiento[0] #}
+                            <a href="{{url_for('editar_detalle_alojamiento', id=detalle_alojamiento[0])}}" class="button is-info">Editar</a>
+                        </td>
+                        <td>
+                            <form action="{{url_for('eliminar_detalle_alojamiento')}}" method="POST">
+                                <input type="hidden" name="id" value="{{detalle_alojamiento[0]}}">
+                                <button class="button is-danger">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+{% endblock %}

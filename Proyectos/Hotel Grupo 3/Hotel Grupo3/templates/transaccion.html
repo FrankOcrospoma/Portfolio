@@ -1,0 +1,55 @@
+{% extends "maestra.html" %}
+{% block titulo %} Transaccion {% endblock %}
+{% block contenido %}
+
+<section class="section">
+    <div class="columns">
+        <div class="column">
+            <h3 class="is-size-3">Transaccion</h3>
+            <a href="{{url_for('formulario_agregar_transaccion')}}" class="button is-success">Agregar</a>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Fecha registro</th>
+                        <th>Hora registro</th>
+                        <th>Tipo</th>
+                        <th>Fecha entrada</th>
+                        <th>Hora entrada</th>
+                        <th>Fecha salida</th>
+                        <th>Hora salida</th>
+                        <th>Nº Habitacion </th>
+                        <th>Dni</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for transaccion in transaccion %}
+                    <tr>
+                        <td>{{transaccion[1]}}</td>
+                        <td>{{transaccion[2]}}</td>
+                        <td>{{transaccion[3]}}</td>
+                        <td>{{transaccion[4]}}</td>
+                        <td>{{transaccion[5]}}</td>
+                        <td>{{transaccion[6]}}</td>
+                        <td>{{transaccion[7]}}</td>
+                        <td>{{transaccion[8]}}</td>
+                        <td>{{transaccion[9]}}</td>
+                        <td>
+                            {# Pasar el id (lo que hay en transaccion[0] #}
+                            <a href="{{url_for('editar_transaccion', id=transaccion[0])}}" class="button is-info">Editar</a>
+                        </td>
+                        <td>
+                            <form action="{{url_for('eliminar_transaccion')}}" method="POST">
+                                <input type="hidden" name="id" value="{{transaccion[0]}}">
+                                <button class="button is-danger">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+{% endblock %}

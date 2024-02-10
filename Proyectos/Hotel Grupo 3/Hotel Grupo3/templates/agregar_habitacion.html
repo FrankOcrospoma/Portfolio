@@ -1,0 +1,31 @@
+{% extends "maestra.html" %}
+{% block titulo %}
+Agregar habitacion
+{% endblock %}
+{% block contenido %}
+<section class="section">
+    <div class="columns">
+        <div class="column is-one-third">
+            <h3 class="is-size-3">Agregar habitacion</h3>
+            <form action="{{url_for('guardar_habitacion')}}" method="post">
+                <label for="estado">Estado:</label>
+                <select required class="select" name="estado" id="estado">
+                    <option value="D">Disponible</option>
+                    <option value="O">Ocupada</option>
+                    <option value="M">Mantenimiento</option>
+                </select>
+                <label for="descripcion">Descripcion:</label>
+                <input required type="text" class="input" placeholder="Descripcion" name="descripcion" id="descripcion">
+                <label for="categoria_id">Categoría:</label>
+                <select required class="select" name="categoria_id" id="categoria_id">
+                    {% for categoria in categorias %}
+                        <option value="{{ categoria[0] }}">{{ categoria[1] }}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit" class="button is-success mt-2">Guardar</button>
+                <a href="{{url_for('habitacion')}}" class="button is-primary mt-2">Volver</a>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}
