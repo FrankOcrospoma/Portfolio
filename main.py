@@ -26,6 +26,10 @@ def rest():
 @app.route('/cubo')
 def cubo():
     return render_template('cubo.html')
+
+@app.route('/vet')
+def vet():
+    return render_template('veterinaria4patas.html')
 @app.route('/fantasma')
 def fantasma():
     return render_template('fantasma.html')
