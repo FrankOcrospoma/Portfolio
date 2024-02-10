@@ -1,0 +1,240 @@
+{% extends "maestra.html" %}
+{% block titulo %} Documentacion Categoría Habitacion {% endblock %}
+{% block contenido %}
+
+<section class="section_docu">
+<body class="docu">
+    <div class="navbar2 is-warning" >
+        <div class="navbar2-menu">
+            <div class="navbar2-start">
+                <a class="navbar2-item"  href="{{url_for('documentacion_habitacion')}}">Habitación</a>
+                <a class="navbar2-item"  href="{{url_for('documentacion_personas')}}">Persona</a>
+                <a class="navbar2-item"  href="{{url_for('documentacion_categoria_habitacion')}}">Categoria Habitacion</a>
+                <a class="navbar2-item"  href="{{url_for('documentacion_transaccion')}}">Transacción</a>
+                <a class="navbar2-item"  href="{{url_for('documentacion_servicio')}}">Servicio</a>
+                <a class="navbar2-item"  href="{{url_for('docu_detalle_servicios')}}">D. Servicio</a>
+                <a class="navbar2-item"  href="{{url_for('documentacion_detalle_alojamiento')}}">D. Alojamiento</a>
+                <a class="navbar2-item"  href="{{url_for('documentacion_comprobante')}}">Comprobante</a>
+                <a class="navbar2-item"  href="{{url_for('documentacion_detalle')}}">D. Comprobante</a>
+            </div>
+
+        </div>
+    </div>
+  <h1>Categoría Habitacion</h1>
+  <p>Métodos para registrar las Categorías Habitaciones que tiene el hotel para el huesped.</p>
+  <h2>Obtener todas las Categoría Habitaciones</h2>
+  <p>Este método te permite obtener todas las Categoría Habitacion registradas por el hotel.</p>
+  <table class="custom-table">
+    <tr>
+      <td colspan="2"> <b>HTTP Request (GET)</b></td>
+      <td colspan="2">https://grupo3.pythonanywhere.com/api_obtenercategoria_habitacion</td>
+    </tr>
+    <tr>
+      <td colspan="4">No es necesario preparar un cuerpo en la solicitud</td>
+    </tr>
+    <tr>
+      <td colspan="4"> <b>RESPONSE</b></td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        [ <br>
+        { <br>
+        {
+        "id": 3,<br>
+        "nombre": "Matrimonial",<br>
+        "precio": "150.00"
+    }br>
+        "id": 2
+    }, <br>
+    { <br>
+       {
+        "id": 4,<br>
+        "nombre": "Suite",<br>
+        "precio": "250.00"
+    }
+    } <br>
+]</td>
+      <td colspan="2">El cuerpo de respuesta,
+        manifiesta todos los elementos
+        pedidos con dos campos, a través
+        de un JSON array. <br>
+        Donde <br>
+        nombre: Es el nombre de la categoría de habitación a elegir por el huesped. <br>
+        precio: Es el precio la categoría habitación a ofrecer al huesped. <br>
+        id: Es la identificación de la Categoría Habitacion.
+      </td>
+    </tr>
+  </table>
+      <h2>Obtener Categoría Habitacion por id</h2>
+      <p>Este método te permite obtener una Categoría Habitacion registrada en el hotel.</p>
+      <table class="custom-table">
+        <tr>
+          <td colspan="2"> <b>HTTP Request (GET)</b></td>
+          <td colspan="2">https://grupo3.pythonanywhere.com/api_obtener_categoria_habitacion/2</td>
+        </tr>
+        <tr>
+          <td colspan="4">No es necesario preparar un cuerpo en la solicitud</td>
+        </tr>
+        <tr>
+          <td colspan="4"> <b>RESPONSE</b></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            [ <br>
+            { <br>
+            {
+            "id": 2,<br>
+            "nombre": "Doble",<br>
+            "precio": "100.00"
+            }
+    ] </td>
+          <td colspan="2">El cuerpo de respuesta,
+            manifiesta todos los elementos
+            pedidos con tres campos, a través
+            de un JSON array. <br>
+            Donde <br>
+            nombre: Es el nombre de la categoría de habitación a elegir por el huesped. <br>
+            precio: Es el precio la categoría habitación a ofrecer al huesped. <br>
+            id: Es la identificación de la Categoría Habitacion.
+          </td>
+        </tr>
+      </table>
+      <h2>Guardar Categoría Habitación</h2>
+      <p>Este método te permite crear una nueva habitación.</p>
+      <table class="custom-table">
+        <tr>
+          <td colspan="2"> <b>HTTP Request (POST)</b></td>
+          <td colspan="2">https://grupo3.pythonanywhere.com/api_guardarcategoria_habitacion</td>
+        </tr>
+        <tr>
+          <td colspan="2">{
+            "id": 7, <br>
+            "nombre": "Triple", <br>
+            "precio": "300"
+            }</td>
+            <td colspan="2">El cuerpo de solicitud,
+                manifiesta todos los elementos
+                a pedir con un campos, a través
+                de un JSON array. Aqui no se coloca el campo id, el sistema se encargará de asignarle el id correspondiente.<br>
+                Donde <br>
+                nombre: Es el nombre de la categoría de habitación a elegir por el huesped. <br>
+                precio: Es el precio la categoría habitación a ofrecer al huesped. <br>
+                id: Es la identificación de la Categoría Habitacion.
+
+        </td>
+        </tr>
+        <tr>
+          <td colspan="4"> <b>RESPONSE</b></td>
+        </tr>
+        <tr>
+          <td colspan="2">{
+            "Mensaje": "Categoría Habitacion registrada correctamente"
+        }</td>
+          <td colspan="2">El cuerpo de respuesta,
+            manifiesta que la  Categoría Habitacion ha sido
+            registrada correctamente.
+            Donde
+            Mensaje: Es la respuesta de la
+            lógica de negocio de Categoría Habitacion.</td>
+        </tr>
+      </table>
+          <h2>Actualizar Categoría habitación</h2>
+          <p>Este método te permite actualizar una nueva Categoría Habitacion.</p>
+          <table class="custom-table">
+            <tr>
+              <td colspan="2"> <b>HTTP Request (POST)</b></td>
+              <td colspan="2">https://grupo3.pythonanywhere.com/api_actualizarhabitacion</td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                {
+                 "id": 7, <br>
+            "nombre": "Triple", <br>
+            "precio": "400"
+
+                }</td>
+                <td colspan="2">El cuerpo de solicitud,
+                    manifiesta todos los elementos
+                    a pedir con 4 campos, a través
+                    de un JSON array. Aqui se coloca id de la Categoría Habitacion a actualizar.<br>
+                    Donde <br>
+                    nombre: Es el nombre de la categoría de habitación a elegir por el huesped. <br>
+                    precio: Es el precio la categoría habitación a ofrecer al huesped. <br>
+                    id: Es la identificación de la Categoría Habitacion.
+                </td>
+            </tr>
+            <tr>
+              <td colspan="4"> <b>RESPONSE</b></td>
+            </tr>
+            <tr>
+              <td colspan="2">{
+                "Mensaje": "Categoría Habitacion actualizada correctamente"
+            }</td>
+              <td colspan="2">El cuerpo de respuesta,
+                manifiesta que la Categoría Habitacion ha sido
+                actualizada correctamente.
+                Donde
+                Mensaje: Es la respuesta de la
+                lógica de negocio de la Categoría Habitacion.</td>
+            </tr>
+          </table>
+              <h2>Eliminar  Categoría Habitacion</h2>
+              <p>Este método te permite eliminar una Categoría Habitacion.</p>
+              <table class="custom-table">
+                <tr>
+                  <td colspan="2"> <b>HTTP Request (POST)</b></td>
+                  <td colspan="2">https://grupo3.pythonanywhere.com/api_eliminarcategoria_habitacion</td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    {
+                    "id":7, <br>
+                    }</td>
+                    <td colspan="2">El cuerpo de solicitud,
+                        manifiesta todos los elementos
+                        a pedir con un campo. Aqui se coloca id de  la categoría habitación a eliminar.<br>
+                        Donde <br>
+                    id: Es la identificación de la Categoría Habitacion. <br>
+                </tr>
+                <tr>
+                  <td colspan="4"> <b>RESPONSE</b></td>
+                </tr>
+                <tr>
+                  <td colspan="2">{
+                    "Mensaje": "Categoría Habitacion eliminada correctamente"
+                }</td>
+                  <td colspan="2">El cuerpo de respuesta,
+                    manifiesta que la Categoría Habitacion ha sido
+                    eliminada correctamente.
+                    Donde
+                    Mensaje: Es la respuesta de la
+                    lógica de negocio de la Categoría Habitacion.</td>
+                </tr>
+        </table>
+
+         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var currentURL = window.location.href;
+            $('.navbar2-item').each(function() {
+                if (currentURL.indexOf($(this).attr('href')) > -1) {
+                    $(this).addClass('active');
+                }
+
+            });
+
+
+
+
+/*function adjustBoardSize() {
+    var boardSize = Math.min($(window).width(), $(window).height()) * 0.5;
+    $("table").css("width", boardSize);
+    $("table").css("height", boardSize);
+  }
+
+  adjustBoardSize();*/
+        });
+    </script>
+</body>
+</section>
+{% endblock %}

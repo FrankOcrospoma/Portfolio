@@ -1,0 +1,33 @@
+
+body{
+    background: #4A6AEB;
+    background: linear-gradient(to right,#4A6AEB,#0CB7F2);
+}
+.bg{
+    background-image: url(https://www.mimenu.pe/wp-content/uploads/2020/09/166.jpg);
+    background-position: center;
+}
+
+.d-grid a{
+    text-decoration: none;
+    color: #fff;
+    font-family: 'roboto';
+    border-radius: 10px;
+    background-color: #4A6AEB;
+    color: #fff;
+    text-align: center;
+    height: 30px;
+    font-size: 20px;
+}
+.d-grid {
+    padding-top: 0px;
+}
+
+.d-grid a:hover{
+    
+    background-color: #0CB7F2;
+    
+}
+.d-grid .volver{
+    background: #2A363B ;
+}

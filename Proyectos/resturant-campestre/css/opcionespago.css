@@ -1,0 +1,157 @@
+.d_3{
+    background-color: var(--rosa);
+    }
+    
+    fieldset img{
+      height: 100px;
+      padding-left:20px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    
+    #medioPago legend{
+      background-color: #4A6AEB;
+      padding: 5px;
+      font-weight: bold;
+      color: #fff;
+      border-radius: 15px;
+      text-align: center;
+      margin-bottom: 20px;
+      margin-top: 20px;
+    }
+    #yape legend{
+      background-color: #4A6AEB;
+      padding: 5px;
+      font-weight: bold;
+      color: #fff;
+      border-radius: 15px;
+      text-align: center;
+      margin-bottom: 20px;
+      margin-top: 20px;
+    }
+    .btn{
+      width: 165px;
+      
+    }
+    
+    fieldset{
+      margin-bottom: 20px;
+      margin-left: 30px;
+    }
+    
+    fieldset div{
+      margin-top: 10px;
+      margin-right: 20px;
+      margin-left: 20px;
+    }
+    
+    #medioPago{
+      border-radius: 20px;
+      border: #000 2px solid;
+    }  
+    #yape fieldset img{
+      width: 300px;
+      height: 300px;
+  
+    }
+    .row{
+      padding-top: 150px;
+      padding-bottom: 30px;
+      padding-left: 50px;
+      padding-right: 80px;
+    }
+   
+    .row aside div{
+      
+      background-color: #fff;
+    }
+    h5{
+      font-size: 25px;
+    }
+    section fieldset input{
+      padding-right: 10px;
+      margin-bottom: 15px;
+      margin-left: 10px;
+      margin-right: 20px;
+    }
+    
+    
+    section fieldset label{
+      padding-right: 5px;
+    }
+    
+    section fieldset select{
+      padding-top: 4px;
+      background-color: #fff;
+      margin-right: 10px;
+      margin-left: 10px;
+      border-radius: 5px;
+    }
+    
+    section fieldset i{
+      margin-left: 10px ;
+      padding-right: 5px;
+    }
+    
+    #div fieldset{
+      border: #000 2px solid;
+      border-radius: 20px;
+      padding-bottom: 20px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    
+    #yape fieldset{
+      border: #000 2px solid;
+      border-radius: 20px;
+      padding-bottom: 20px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    
+    #div legend{
+      text-align: center;
+      margin-bottom: 20px;
+      margin-top: 20px;
+      background-color: #a1a1a1;
+    }
+    
+    .row aside div{
+      margin-bottom: 20px;
+      margin-left: 30px;
+      padding-left: 20px;
+      padding-top: 20px;
+      padding-right: 20px;
+    
+      border: #000 1px solid;
+    }
+    
+    .row aside div h5{
+      text-align: center;
+      font-weight: bold;
+    }
+    
+    .row aside #regresarCarrito{
+    
+      background-color: #2A363B;
+      width: 180px;
+      color: #fff;
+    }
+    
+    .row aside #Borrar{
+      background-color: #ff3936;
+      color: #fff;
+    }
+    
+    .row aside #Continuar{
+      width: 180px;
+      background-color: #4A6AEB;
+      color: #fff;
+    }
+    
+    .row aside a {
+      font-size: 13px;
+      margin-left: 50px;
+      margin-bottom: 10px;
+      margin-right: 20px;
+    }

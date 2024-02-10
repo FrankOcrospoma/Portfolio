@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en"><!-- Basic -->
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+   
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+     <!-- Site Metas -->
+    <title>Camarones</title>  
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/static/images/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">    
+	<!-- Site CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">    
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/static/css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/custom.css">
+	<link rel="stylesheet" href="/static/css/modal.css">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+	<!--Modal del CTA  -->
+<section>
+	<div class="modal abs-center" id="myModal">
+	  <div class="contenido">
+		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+			<div class="modal-content" >
+			  <div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">¡Bienvenidos!</h5>
+				<a class="btn btn-close" type="button" value="Cerrar" onclick="toggle(this)"></a>
+			  </div>
+			  <div class="modal-body">
+				<img src="/static/images/cta.jpeg" height="400px" width="300px" >
+			  </div>
+			  <div class="modal-footer">
+				<div>
+				  <input class="btn btn-cerrar" type="button" value="Cerrar" onclick="toggle(this)">
+				</div>                
+				<a class="btn btn-registrar" href="registrar.html" role="button" data-anijs="if: mouseover, do: tada animated">Registrar</a><br>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </section>
+  
+	<!-- Start header -->
+	<header class="top-navbar">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container">
+				<a class="navbar-brand" href="index.html">
+					<img src="https://drive.google.com/uc?export=download&id=1Az7V3UJxbKOXkd2qZXPHUU0V9AKMxSDF" alt="" />
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbars-rs-food">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active"><a class="nav-link" href="index.html">Inicio</a></li>
+						<li class="nav-item"><a class="nav-link" href="menu.html">Menú</a></li>
+						<li class="nav-item"><a class="nav-link" href="Te brindamos.html">Te Brindamos</a></li>
+						<li class="nav-item"><a class="nav-link" href="sobreNosotros.html">Sobre Nosotros</a></li>
+						<li class="nav-item"><a class="nav-link" href="reservation.html">Reserva</a></li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Información</a>
+							<div class="dropdown-menu" aria-labelledby="dropdown-a">
+								<a class="dropdown-item" href="infoCocineros.html">Cocineros</a>
+								<a class="dropdown-item" href="gallery.html">Galería</a>
+								<a class="dropdown-item" href="blog.html">Preguntas Frecuentes</a>
+								<a class="dropdown-item" href="Establecimiento.html">Establecimiento</a>
+							</div>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
+					</ul>
+					<div class="iniciarSesion">
+						<a href="registrar.html"><i class="fa-solid fa-circle-user"></i></a>
+						</div>
+					</div>
+					<div class="submenu" id="submenu">
+						<a  href="carritoWeb.html" id="butt"><i class="fa-solid fa-cart-shopping"></i></a>
+						<p class="count-product">0</p>
+						<div class="cart-products" id="products-id" >
+							<p class="close-btn" onclick="closeBtn()" >X</p>
+							<h3>Mi carrito</h3>
+							<div class="card-items">
+							  <div class="item">
+							  </div>
+							</div>
+							<h2>Total: S/ <strong class="price-total">0</strong></h2>
+						   <div class="botoncarrito">
+							<a href="carritoWeb.html">Ver Carrito</a>
+						   </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<!-- End header -->
+	
+	<!-- Start slides -->
+	<div id="slides" class="cover-slides">
+		<ul class="slides-container">
+			<li class="text-left">
+				<img src="https://drive.google.com/uc?export=download&id=10KKa8-TUCGlaOv-Re8JKbKFottDGHsgE" alt="">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h1 class="m-b-20"><strong>Bienvenidos a Los 2 Camarones <br> Restaurant - Campestre</strong></h1>
+							<p class="m-b-40">El mejor restaurante de Jayanca, somos expertos en cocina peruana.<br> 
+							</p>
+							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="reservation.html" style="border-radius: 20px; border: 0px none;">Reservación</a></p>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="text-left">
+				<img src="https://drive.google.com/uc?export=download&id=1i7tcwYkOSPTjD_ywjI3J62hpEYiHP80j" alt="">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h1 class="m-b-20"><strong>Bienvenidos a Los 2 Camarones <br> Restaurant - Campestre</strong></h1>
+							<p class="m-b-40">El mejor restaurante de Jayanca, somos expertos en cocina peruana.<br> 
+							</p>
+							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="reservation.html" style="border-radius: 20px; border: 0px none;">Reservación</a></p>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="text-left">
+				<img src="https://drive.google.com/uc?export=download&id=1-lvvyub27pO0WpASOPsFp1J3Bf3ywHRx" alt="">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h1 class="m-b-20"><strong>Bienvenidos a Los 2 Camarones <br> Restaurant - Campestre</strong></h1>
+							<p class="m-b-40">El mejor restaurante de Jayanca, somos expertos en cocina peruana.<br> 
+							</p>
+							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="reservation.html" style="border-radius: 20px; border: 0px none;">Reservación</a></p>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+		<div class="slides-navigation">
+			<a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+			<a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+		</div>
+	</div>
+	<!-- End slides -->
+	
+	<!-- Start About -->
+	<div class="about-section-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-12 text-center">
+					<div class="inner-column"><br><br>
+						<h1>Bienvenidos <span>A Los 2 Camarones </span></h1>	
+						<p>
+							"Los Dos Camarones" ha conquistado a los amantes de los sabores marinos con su buena cocina, fruto del empeño de sus fundadores, es y será la fuente de su inspiración de este restaurante campestre ubicado en Jayanca. Clásicos de la cocina marina preparados a su estilo, además creativas novedades.
+						</p>
+						
+						<a class="btn btn-lg btn-circle btn-outline-new-white" style="border-radius: 20px; border: 0px none;" href="#">Reservation</a>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12">
+					<video src="https://drive.google.com/uc?export=download&id=1P12-5Kmg6oXKU3y--iQ_Z89vkq9jz5N0" controls width="640" height="480"></video>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End About -->
+	
+	<!-- Start QT -->
+	<div class="qt-box qt-background">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 ml-auto mr-auto text-center">
+					<p class="lead ">
+						" Si no eres tú quien cocina, mantente fuera del camino y felicita al chef."
+					</p>
+					<span class="lead">Michael Strahan</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End QT -->
+	
+	<!-- Start Menu -->
+	<div class="menu-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="heading-title text-center">
+						<h2>Menú Especial</h2>
+						<p></p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row inner-menu-box">
+				<div class="col-3">
+					<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+						<a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Todos</a>
+						<a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Bebidas</a>
+						<a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Ceviches</</a>
+						<a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Platos a la Carta</a>
+					</div>
+				</div>
+				
+				<div class="col-9">
+					<div class="tab-content" id="v-pills-tabContent">
+						<div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+							<div class="row">
+								<div class="col-lg-4 col-md-6 special-grid drinks">
+									<div class="gallery-single fix">
+										<img src="https://drive.google.com/uc?export=download&id=1ETo-otreq9VRCUCPXYoevtCQZ4rfcHZS" class="img-fluid" alt="Image">
+										<div class="why-text">
+											<h4>Mojito</h4>
+											<p>Bebida con Hierbas regionales.</p>
+											<h5> S/ 16.90</h5>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-lg-4 col-md-6 special-grid drinks">
+									<div class="gallery-single fix">
+										<img src="https://drive.google.com/uc?export=download&id=1YUAMl5QM85LO8_3bNv048KlqF1D3trRI" class="img-fluid" alt="Image">
+										<div class="why-text">
+											<h4>Chicha de Jora</h4>
+											<p>Bebida Tradicional de la Region.</p>
+											<h5> S/9.90</h5>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-lg-4 col-md-6 special-grid drinks">
+									<div class="gallery-single fix">
+										<img src="https://drive.google.com/uc?export=download&id=1Pp-1v6zUHh9-MRQhXrBQIVn8DKFl89Wd" class="img-fluid" alt="Image">
+										<div class="why-text">
+											<h4>Cerveza Cusqueña Negra</h4>
+											<p> Bebida peruana de origen milenario con una combinación de finos ingredientes y 100% malta cebada.
+											</p>
+											<h5> S/ 10.00</h5>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-lg-4 col-md-6 special-grid lunch">
+									<div class="gallery-single fix">
+										<img src="https://drive.google.com/uc?export=download&id=19094E9VIj_Jl1TdEVVJYuLxdK7Qb9sMU" class="img-fluid" alt="Image">
+										<div class="why-text">
+											<h4>Barco Marino Kinesiologa Cevichera</h4>
+											<p></p>
+											<h5> S/ 50.90</h5>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-lg-4 col-md-6 special-grid lunch">
+									<div class="gallery-single fix">
+										<img src="https://drive.google.com/uc?export=download&id=1yPptDzMAgEBIt-nNqBCiA-d-Gn3P5CqL" class="img-fluid" alt="Image">
+										<div class="why-text">
+											<h4>Ceviche La Concha de sus Mares</h4>
+											<p>
+												El ceviche de conchas negras es un plato de sabor muy intenso y que tiene la fama de ser un potente afrodisíaco.
+											</p>
+											<h5> S/ 45.90 </h5>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-lg-4 col-md-6 special-grid lunch">
+									<div class="gallery-single fix">
+										<img src="https://drive.google.com/uc?export=download&id=197XyG_LywEfk2K38OWQNCU8CY9EzDVkS" class="img-fluid" alt="Image">
+										<div class="why-text">
+											<h4>Ceviche Mixto</h4>
+											<p>
+												Este ceviche es muy popular en todo el Perú.
+											</p>
+											<h5> S/ 44.90</h5>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-lg-4 col-md-6 special-grid dinner">
+									<div class="gallery-single fix">
+										<img src="https://drive.google.com/uc?export=download&id=1Y3AgvrpWud8fLmoOgpENlnb0j7n3hTFF" class="img-fluid" alt="Image">
+										<div class="why-text">
+											<h4>Arroz con Pato</h4>
+											<p>
+												El arroz con pato es una comida típica de la región Lambayeque​​​​ en el Perú. 
+											</p>
+											<h5> S/ 25.00</h5>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-lg-4 col-md-6 special-grid dinner">
+									<div class="gallery-single fix">
+										<img src="https://drive.google.com/uc?export=download&id=1VWnvIb9fyX7ge2g-cMV2DpBnQTQJVZDt" class="img-fluid" alt="Image">
+										<div class="why-text">
+											<h4>Martín a la Norteña</h4>
+											<p>
+												El cabrito a la norteña es un seco típico de la gastronomía del Perú.​
+											</p>
+											<h5> S/22.90</h5>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-lg-4 col-md-6 special-grid dinner">
+									<div class="gallery-single fix">
+										<img src="https://drive.google.com/uc?export=download&id=1sVTo1i8uMTWmbgITMkBGsd3FLujPDHTl" class="img-fluid" alt="Image">
+										<div class="why-text">
+											<h4>Arroz Con Mariscos</h4>
+											<p>
+												El arroz con mariscos o a la marinera es un plato típico latinoamericano.
+											</p>
+											<h5> S/ 35.90</h5>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+						<div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+							<div class="row">
+								<div class="col-lg-4 col-md-6 special-grid drinks">
+									<div class="gallery-single fix">
+										<img src="https://drive.google.com/uc?export=download&id=1ETo-otreq9VRCUCPXYoevtCQZ4rfcHZS" class="img-fluid" alt="Image">
+										<div class="why-text">
+											<h4>Mojito</h4>
+											<p>Bebida con Hierbas regionales.</p>
+											<h5> S/ 16.90</h5>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-lg-4 col-md-6 special-grid drinks">
+									<div class="gallery-single fix">
+										<img src="https://drive.google.com/uc?export=download&id=1YUAMl5QM85LO8_3bNv048KlqF1D3trRI" class="img-fluid" alt="Image">
+										<div class="why-text">
+											<h4>Chicha de Jora</h4>
+											<p>Bebida Tradicional de la Region.</p>
+											<h5> S/9.90</h5>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-lg-4 col-md-6 special-grid drinks">
+									<div class="gallery-single fix">
+										<img src="https://drive.google.com/uc?export=download&id=1Pp-1v6zUHh9-MRQhXrBQIVn8DKFl89Wd" class="img-fluid" alt="Image">
+										<div class="why-text">
+											<h4>Cerveza Cusqueña Negra</h4>
+											<p> Bebida peruana de origen milenario con una combinación de finos ingredientes y 100% malta cebada.
+											</p>
+											<h5> S/ 10.00</h5>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+						<div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+							<div class="row">
+								<div class="col-lg-4 col-md-6 special-grid lunch">
+									<div class="gallery-single fix">
+										<img src="https://drive.google.com/uc?export=download&id=19094E9VIj_Jl1TdEVVJYuLxdK7Qb9sMU" class="img-fluid" alt="Image">
+										<div class="why-text">
+											<h4>Barco Marino Kinesiologa Cevichera</h4>
+											<p></p>
+											<h5> S/ 50.90</h5>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-lg-4 col-md-6 special-grid lunch">
+									<div class="gallery-single fix">
+										<img src="https://drive.google.com/uc?export=download&id=1yPptDzMAgEBIt-nNqBCiA-d-Gn3P5CqL" class="img-fluid" alt="Image">
+										<div class="why-text">
+											<h4>Ceviche La Concha de sus Mares</h4>
+											<p>
+												El ceviche de conchas negras es un plato de sabor muy intenso y que tiene la fama de ser un potente afrodisíaco.
+											</p>
+											<h5> S/ 45.90 </h5>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-lg-4 col-md-6 special-grid lunch">
+									<div class="gallery-single fix">
+										<img src="https://drive.google.com/uc?export=download&id=197XyG_LywEfk2K38OWQNCU8CY9EzDVkS" class="img-fluid" alt="Image">
+										<div class="why-text">
+											<h4>Ceviche Mixto</h4>
+											<p>
+												Este ceviche es muy popular en todo el Perú.
+											</p>
+											<h5> S/ 44.90</h5>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+							<div class="row">
+								<div class="col-lg-4 col-md-6 special-grid dinner">
+									<div class="gallery-single fix">
+										<img src="https://drive.google.com/uc?export=download&id=1Y3AgvrpWud8fLmoOgpENlnb0j7n3hTFF" class="img-fluid" alt="Image">
+										<div class="why-text">
+											<h4>Arroz con Pato</h4>
+											<p>
+												El arroz con pato es una comida típica de la región Lambayeque​​​​ en el Perú. 
+											</p>
+											<h5> S/ 25.00</h5>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-lg-4 col-md-6 special-grid dinner">
+									<div class="gallery-single fix">
+										<img src="https://drive.google.com/uc?export=download&id=1VWnvIb9fyX7ge2g-cMV2DpBnQTQJVZDt" class="img-fluid" alt="Image">
+										<div class="why-text">
+											<h4>Martín a la Norteña</h4>
+											<p>
+												El cabrito a la norteña es un seco típico de la gastronomía del Perú.​
+											</p>
+											<h5> S/22.90</h5>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-lg-4 col-md-6 special-grid dinner">
+									<div class="gallery-single fix">
+										<img src="https://drive.google.com/uc?export=download&id=1sVTo1i8uMTWmbgITMkBGsd3FLujPDHTl" class="img-fluid" alt="Image">
+										<div class="why-text">
+											<h4>Arroz Con Mariscos</h4>
+											<p>
+												El arroz con mariscos o a la marinera es un plato típico latinoamericano.
+											</p>
+											<h5> S/ 35.90</h5>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<!-- End Menu -->
+	
+	<!-- Start Gallery -->
+	<div class="gallery-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="heading-title text-center">
+						<h2>Cocineros Expertos</h2>
+						<p>
+							La familia de nuestro restaurante "Los II Camarones" cuenta tras sus filas a los mejores cocineros de comida peruana norteña de todo el Perú. Formados en escuelas de alto prestigio, nuestro gran equipo de cocineros siempre estará dispuesto a brindarle el mejor servicio posible y preparar la mejor comida que se pueda imaginar
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<center><img id="cociex" src="/static/images/CociEx.jpg"></img></center>
+	     	
+		</div>
+
+	</div>
+	<!-- End Gallery -->
+	
+	
+
+	
+	<!-- Start Footer -->
+	<footer class="footer-area bg-f">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-6">
+					<img src="https://drive.google.com/uc?export=download&id=1ZBLlUsgGGvmcdU4TxoHIVg45JBwakcDT" alt="" width="100%" />
+				</div>
+				<div class="col-lg-2 col-md-6">
+					<h3>Mapa del Sitio</h3>
+					<ul class=" lead2">
+						<li><a href="index.html">Inicio</a></li>
+						<li><a href="sobreNosotros.html">Nuestra Historia</a></li>
+						<li><a href="menu.html" >Nuestra Carta</a></li>
+						<li><a href="" >Te Brindamos</a></li>
+						<li><a href="" >Casa Campestre</a></li>
+						<li><a href="" >Casa en la Ciudad</a></li>
+						<li><a href="#" >Libro de Reclamos</a></li>
+					</ul>
+				</div>
+				
+				<div class="col-lg-2 col-md-6">
+					<h3>Los II Camarones</h3>
+					<p><i class="fa fa-map-marker"></i><span class="text-color"> Diego Ferré Sur 351, Jayanca 14000 </span></p>
+					<p><i class="fa fa-volume-control-phone"></i><span class="text-color"> Telefono:</span> +51 943482574</p>
+				</div>
+				<div class="col-lg-2 col-md-6">
+					<h3>EL CAMARÓN</h3>
+					<p><i class="fa fa-map-marker"></i><span class="text-color"> Prolongación Huamanchuco 119,14151 </span></p>
+					<p><i class="fa fa-volume-control-phone"></i><span class="text-color"> Telefono:</span> +51 943482574</p>
+					
+				</div>
+				<div class="col-lg-2 col-md-6">
+					<h3> Redes Sociales:</h3>
+
+					<p class="btn btn-primary btn-floating m-1" style="background-color: #3b5998"
+						href="https://es-la.facebook.com" target="_blank" role="button"><i
+							class="fab fa-facebook"></i></p>
+
+					<p class="btn btn-primary btn-floating m-1" style="background-color: #6e24a0"
+						href="https://www.instagram.com/?hl=es-la" target="_blank" role="button"><i
+							class="fab fa-instagram"></i></i></p>
+					<br>
+
+					<p class="btn btn-primary btn-floating m-1" style="background-color: #23b8dd;"
+						href="https://twitter.com" target="_blank" role="button"><i
+							class="fab fa-twitter-square"></i></p>
+					<p class="btn btn-primary btn-floating m-1" style="background-color: #cc1717"
+						href="https://www.youtube.com" target="_blank" role="button"> <i
+							class="fab fa-youtube-square"></i></p>
+				</div>
+			</div>
+		</div>
+	
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<p class="company-name"> 
+								© 2022 Web Restaurant-Campestre:
+								<a class="text-white" href="">Grupo 03</a> <br>
+								Fecha de creación: 11/11/2022<br>
+								Ultima Actualización: 04/12/2022
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- End Footer -->
+	
+	<a href="#" id="back-to-top" title="Back to top" style="display: none;"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></a>
+
+	<!-- ALL JS FILES -->
+	<script src="/static/js/jquery-3.2.1.min.js"></script>
+	<script src="/static/js/popper.min.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+    <!-- ALL PLUGINS -->
+	<script src="/static/js/jquery.superslides.min.js"></script>
+	<script src="/static/js/images-loded.min.js"></script>
+	<script src="/static/js/isotope.min.js"></script>
+	<script src="/static/js/baguetteBox.min.js"></script>
+	<script src="/static/js/form-validator.min.js"></script>
+    <script src="/static/js/contact-form-script.js"></script>
+	<script src="https://kit.fontawesome.com/0ea696cd02.js" crossorigin="anonymous"></script>
+    <script src="/static/js/custom.js"></script>
+	<script src="/static/JS/sweetAlert.js"></script>
+	<script src="/static/js/main.js"></script>
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
