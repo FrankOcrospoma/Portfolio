@@ -1,0 +1,265 @@
+.section_parte1 h2{
+    border-bottom: 1px solid;
+    font-size: 20px;
+    }
+    
+    .section_contenido{
+    padding-top: 20px;
+    padding-bottom: 90px;
+    }
+    
+    .controls{
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 5px 8px;
+    }
+    
+    .control{
+    width: 49.5%;
+    margin: 0.5rem 0;
+    padding: 5px 8px;
+    }
+    
+    .lineacion{
+    margin-right: 2px;
+    }
+    
+    .combox{
+    width: 32%;
+    margin: 0.5rem 0;
+    color: #000;
+    background-color: RGB(241, 243, 245);
+    padding: 5px 8px;
+    border: none;
+    }
+    
+   
+    
+    .sesion{
+    font-size: 15px;
+    margin-left: 220px;
+    text-decoration: none;
+    color: #006ce5;
+    }
+    
+    .envio{
+    margin: 1rem 0;
+    }
+    
+    .espace{
+    margin-right: 8px;
+    }
+    
+    .botones{
+    font-size: 18px;
+    }
+    
+    .controles{
+    margin-bottom: 40px;
+    }
+    
+    .btn_1, .usar{
+    background: gray;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+    display: inline-block;
+    width: 120px;
+    height: 40px;
+    border: none;
+    text-decoration: none;
+    }
+    
+    .btn_2{
+      background-color: #006ce5;
+      color: white;
+     text-align: center;
+      padding: 5px 20px;
+     border-radius: 10px;
+      text-decoration: none;
+      font-size: 20px;
+    }
+    .codigo{
+      background-color: RGB(241, 243, 245);
+      border: 1px solid RGB(241, 243, 245);
+      text-align: center;
+      padding: 5px 20px;
+      text-decoration: none;
+     }
+      
+    
+    .section_parte1 input{
+      border: 1px solid RGB(241, 243, 245);
+      background-color: #fff;
+    }
+    
+    ::placeholder{
+    color: #000;
+    }
+    .section_parte2{
+      background: RGB(206, 212, 218);
+    }
+    
+    .section_parte2 h2{
+    font-size: 20px;
+    border-bottom: 1px solid;
+    }
+    
+    .resumen{
+    font-size: 20px;
+    }
+
+    .dis{
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .botonesPago img{
+      width: 100px;
+      height: 40px;
+    }
+    .botonesPago{
+      width: 100%;
+      justify-content: space-evenly;
+    }
+    .botonesPago a{
+      width: 150px;
+      height: 40px;
+    
+      border-radius: 5px;
+      text-align: center;
+     
+    }
+    .paypal{
+      background: RGB(255, 212, 59);
+    }
+    .master{
+      background: RGB(92, 124, 250);
+    }
+    .yape{
+      background: RGB(132, 94, 247);
+    }
+    
+   .btn_1{
+    font-size: 20px;
+   }
+   
+    
+    .subtotal{
+      border-top: 1px solid;
+      margin-top: 15px;
+      display: flex;
+      justify-content: space-between;
+   
+    }
+    .envio{
+      margin-top: 0px;
+      display: flex;
+      justify-content: space-between;
+   
+    }
+    .section_parte2 h3{
+    font-size: 20px;
+   
+    }
+    
+    .total{
+    border-top: 1px solid;
+    display: flex;
+    justify-content: space-between;
+    }
+    
+   
+    .d_2{
+    background-color: #006ce5;
+    }
+    
+    .section_parte2 .producto_carrito{
+     
+      padding-bottom: 300px;
+      }
+      
+      .btn_1:hover, .usar:hover{
+      color: white;
+      background-color: #006ce5;
+      }
+      
+      .btn_2:hover{
+      background-color: RGB(240, 62, 62);
+      }
+      .producto-carrito{
+        display: flex;
+       
+      }
+      
+      .stilo{
+       font-size: 15px; 
+      }
+      .stilo2{
+        font-size: 15px; 
+        padding-right: 5px;
+      }
+      .producto-carrito img{
+       
+        height: 100px;
+      }
+      .formulario1{
+          display: flex;
+          flex-direction: column;
+      }
+      .nombre-pro{
+          
+          text-align: center;
+      }
+      .contenido-pro{
+          width: 400px;
+      }
+    .stilo{
+     font-size: 15px; 
+    }
+    .stilo2{
+      font-size: 15px; 
+      padding-right: 5px;
+    }
+    .producto-carrito img{
+      width: 120px;
+      height: 50px;
+
+      height: 100px;
+    }
+    select{
+      width: 190px;
+      height: 35px;
+      
+    }
+#producto-cotenido{
+  margin-top: 15px;
+}
+    .sec{
+      display: flex;
+      justify-content: space-evenly;
+    }
+    @media screen and (max-width: 999px) {
+     
+    }
+    @media screen and (max-width: 500px) {
+      .dis{
+        display: block;
+        height: 200px;
+      }
+ 
+      .botones,.usar{
+        width: 100px;
+        height: 30px;
+        font-size: 15px;
+      }
+      .car{
+        width: 100px;
+        height: 30px;
+      }
+      .btn_2{
+        padding: 0;
+        width: 100%;
+      }
+    }
